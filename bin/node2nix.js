@@ -295,7 +295,7 @@ if(registries.length == 0) {
 /* Perform the NPM to Nix conversion */
 node2nix.npmToNix(inputJSON, outputNix, compositionNix, nodeEnvNix, lockJSON, supplementJSON, supplementNix, production, includePeerDependencies, flatten, nodePackage, registries, noCopyNodeEnv, bypassCache, useFetchGitPrivate, stripOptionalDependencies, function(err) {
     if(err) {
-        process.stderr.write(err + "\n");
+        process.stderr.write(err + "\n" + err.stack);
         process.exit(1);
     } else {
         process.exit(0);
